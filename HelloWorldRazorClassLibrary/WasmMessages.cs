@@ -1,6 +1,6 @@
 ﻿namespace HelloWorldRazorClassLibrary;
 
-public record WasmMessages(HttpClient Http) : IMessages
+public record WasmMessages(ILogger<Messages> Log, HttpClient Http) : IMessages
 {
     public string Greeting(string language) => throw new NotImplementedException();
 
@@ -25,7 +25,7 @@ public record WasmMessages(HttpClient Http) : IMessages
         }
         catch (Exception ex)
         {
-            //Log.LogError("Error looking up the custom text", ex);
+            Log.LogError("Error looking up the custom text", ex);
             throw;
         }
     }
