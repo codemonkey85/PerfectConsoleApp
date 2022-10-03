@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<LangVersion>preview</LangVersion>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Content Remove="wwwroot\CustomText.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="wwwroot\CustomText.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<SupportedPlatform Include="browser" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.0-rc.1.22427.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\HelloWorldLibrary\HelloWorldLibrary.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Update="wwwroot\background.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+</Project>
