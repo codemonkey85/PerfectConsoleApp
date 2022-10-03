@@ -8,13 +8,13 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Content Remove="wwwroot\CustomText.json" />
+		<Content Remove="wwwroot\CustomText.json" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Include="wwwroot\CustomText.json">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </None>
+		<None Include="wwwroot\CustomText.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
 	</ItemGroup>
 
 	<ItemGroup>

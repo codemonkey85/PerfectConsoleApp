@@ -8,6 +8,8 @@ public record Messages(ILogger<Messages> Log) : IMessages
         return output;
     }
 
+    public Task<string> GreetingAsync(string language) => throw new NotImplementedException();
+
     private string LookUpCustomText(string key, string language)
     {
         JsonSerializerOptions options = new()

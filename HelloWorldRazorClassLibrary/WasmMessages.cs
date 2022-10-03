@@ -1,18 +1,10 @@
-﻿using HelloWorldLibrary.Models;
-using System.Net.Http.Json;
-using System.Text.Json;
-
-namespace HelloWorldRazorClassLibrary;
+﻿namespace HelloWorldRazorClassLibrary;
 
 public record WasmMessages(HttpClient Http) : IMessages
 {
-    public string Greeting(string language)
-    {
-        var result = string.Empty;
-        var task = new Task(async () => result = await LookUpCustomTextAsync("Greeting", language));
-        task.RunSynchronously();
-        return result;
-    }
+    public string Greeting(string language) => throw new NotImplementedException();
+
+    public async Task<string> GreetingAsync(string language) => await LookUpCustomTextAsync("Greeting", language);
 
     private async Task<string> LookUpCustomTextAsync(string key, string language)
     {
