@@ -1,8 +1,4 @@
-﻿using HelloWorldLibrary.BusinessLogic;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Logging.Abstractions;
-
-namespace HelloWorldTests.BusinessLogic;
+﻿namespace HelloWorldTests.BusinessLogic;
 
 public class MessagesTests
 {
@@ -12,8 +8,8 @@ public class MessagesTests
         ILogger<Messages> logger = new NullLogger<Messages>();
         Messages messages = new(logger);
 
-        string expected = "Hello World";
-        string actual = messages.Greeting("en");
+        var expected = "Hello World";
+        var actual = messages.Greeting("en");
 
         Assert.Equal(expected, actual);
     }
@@ -24,8 +20,8 @@ public class MessagesTests
         ILogger<Messages> logger = new NullLogger<Messages>();
         Messages messages = new(logger);
 
-        string expected = "Hola Mundo";
-        string actual = messages.Greeting("es");
+        var expected = "Hola Mundo";
+        var actual = messages.Greeting("es");
 
         Assert.Equal(expected, actual);
     }
@@ -39,6 +35,5 @@ public class MessagesTests
         Assert.Throws<InvalidOperationException>(
             () => messages.Greeting("test")
             );
-        
     }
 }

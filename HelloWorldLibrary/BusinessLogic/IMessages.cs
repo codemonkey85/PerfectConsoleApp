@@ -1,7 +1,6 @@
-﻿namespace HelloWorldLibrary.BusinessLogic
+﻿namespace HelloWorldLibrary.BusinessLogic;
+
+public interface IMessages
 {
-    public interface IMessages
-    {
-        string Greeting(string language);
-    }
+    string Greeting(string language);
 }
