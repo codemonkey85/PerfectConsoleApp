@@ -1,11 +1,7 @@
 ﻿namespace HelloWorldLibrary.BusinessLogic;
 
-public class Messages : IMessages
+public record Messages(ILogger<Messages> Log) : IMessages
 {
-    private readonly ILogger<Messages> _log;
-
-    public Messages(ILogger<Messages> log) => _log = log;
-
     public string Greeting(string language)
     {
         var output = LookUpCustomText("Greeting", language);
@@ -34,7 +30,7 @@ public class Messages : IMessages
         }
         catch (Exception ex)
         {
-            _log.LogError("Error looking up the custom text", ex);
+            Log.LogError("Error looking up the custom text", ex);
             throw;
         }
     }
