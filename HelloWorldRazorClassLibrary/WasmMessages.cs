@@ -15,7 +15,9 @@ public record WasmMessages(ILogger<Messages> Log, HttpClient Http) : IMessages
 
         try
         {
-            var messageSets = await Http.GetFromJsonAsync<CustomText[]>("_content/HelloWorldRazorClassLibrary/CustomText.json");
+            var messageSets =
+                await Http.GetFromJsonAsync<CustomText[]>("_content/HelloWorldRazorClassLibrary/CustomText.json",
+                    options);
 
             var messages = messageSets?.Where(x => x.Language == language).First();
 
@@ -25,7 +27,7 @@ public record WasmMessages(ILogger<Messages> Log, HttpClient Http) : IMessages
         }
         catch (Exception ex)
         {
-            Log.LogError("Error looking up the custom text", ex);
+            Log.LogError("Error looking up the custom text: {ex}", ex);
             throw;
         }
     }

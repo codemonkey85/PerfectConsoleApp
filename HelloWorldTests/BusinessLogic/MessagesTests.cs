@@ -8,7 +8,7 @@ public class MessagesTests
         ILogger<Messages> logger = new NullLogger<Messages>();
         Messages messages = new(logger);
 
-        var expected = "Hello World";
+        const string expected = "Hello World";
         var actual = messages.Greeting("en");
 
         Assert.Equal(expected, actual);
@@ -20,7 +20,7 @@ public class MessagesTests
         ILogger<Messages> logger = new NullLogger<Messages>();
         Messages messages = new(logger);
 
-        var expected = "Hola Mundo";
+        const string expected = "Hola Mundo";
         var actual = messages.Greeting("es");
 
         Assert.Equal(expected, actual);

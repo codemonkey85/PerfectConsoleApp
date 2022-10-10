@@ -6,13 +6,15 @@ public record App(IMessages Messages)
     {
         var lang = "en";
 
-        for (var i = 0; i < args.Length; i++)
+        foreach (var arg in args)
         {
-            if (args[i].ToLower().StartsWith("lang="))
+            if (!arg.ToLower().StartsWith("lang="))
             {
-                lang = args[i][5..];
-                break;
+                continue;
             }
+
+            lang = arg[5..];
+            break;
         }
 
         var message = Messages.Greeting(lang);

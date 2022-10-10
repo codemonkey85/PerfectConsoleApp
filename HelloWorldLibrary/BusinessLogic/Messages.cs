@@ -32,7 +32,7 @@ public record Messages(ILogger<Messages> Log) : IMessages
         }
         catch (Exception ex)
         {
-            Log.LogError("Error looking up the custom text", ex);
+            Log.LogError("Error looking up the custom text: {ex}", ex);
             throw;
         }
     }
