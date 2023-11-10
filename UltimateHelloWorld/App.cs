@@ -2,13 +2,13 @@
 
 public record App(IMessages Messages)
 {
-    public void Run(string[] args)
+    public void Run(IEnumerable<string> args)
     {
         var lang = "en";
 
         foreach (var arg in args)
         {
-            if (!arg.ToLower().StartsWith("lang="))
+            if (!arg.StartsWith("lang=", StringComparison.CurrentCultureIgnoreCase))
             {
                 continue;
             }

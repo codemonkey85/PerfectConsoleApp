@@ -33,7 +33,6 @@ public class MessagesTests
         Messages messages = new(logger);
 
         Assert.Throws<InvalidOperationException>(
-            () => messages.Greeting("test")
-            );
+            () => messages.Greeting("test"));
     }
 }

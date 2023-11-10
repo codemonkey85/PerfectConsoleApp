@@ -4,5 +4,5 @@ public class CustomText
 {
     public string Language { get; set; } = default!;
 
-    public Dictionary<string, string> Translations { get; set; } = new();
+    public Dictionary<string, string> Translations { get; set; } = [];
 }
